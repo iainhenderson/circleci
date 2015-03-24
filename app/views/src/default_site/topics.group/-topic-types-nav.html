@@ -4,3 +4,13 @@
     <li><a href="{path='skate/{embed:content_type}'}">Skate</a>{if embed:topic == 'skate'} - current{/if}</li>
     <li><a href="{path='surf/{embed:content_type}'}">Surf</a>{if embed:topic == 'surf'} - current{/if}</li>
 </ul>
+
+{!-- Search Based --}
+{!--
+<ul>
+    <li><a href="{path='{embed:content_type}'}">Everything</a>{if embed:topic == ''} - current{/if}</li>
+    <li><a href="{exp:low_search:url collection='{embed:content_type}' category='{gv_snow_category_id}'}">Snow</a></li>
+    <li><a href="{exp:low_search:url collection='{embed:content_type}' category='{gv_skate_category_id}'}">Skate</a></li>
+    <li><a href="{exp:low_search:url collection='{embed:content_type}' category='{gv_surf_category_id}'}">Surf</a></li>
+</ul>
+--}

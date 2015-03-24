@@ -1,10 +1,10 @@
 <div>
-    {exp:channel:entries
+    {exp:low_search:results
         channel='products'
         entry_id='{embed:entry_id}'
-        category='{embed:category}'
         limit='{embed:limit}'
         paginate='{embed:paginate}'
+        query='{embed:query}'
         dynamic='no'
     }
         <div>{if no_results}No products{/if}</div>
@@ -16,5 +16,5 @@
         {in:sert:products/-card}
         {in:sert:site/-pagination}
 
-    {/exp:channel:entries}
+    {/exp:low_search:results}
 </div>

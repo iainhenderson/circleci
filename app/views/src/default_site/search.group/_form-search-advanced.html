@@ -1,0 +1,37 @@
+{exp:low_search:form
+    search_mode="all"
+    secure="no"
+    query="{segment_3}"
+}
+<div>
+    <label>
+        Keywords:
+        <input type="search"
+               name="keywords"
+               value="{low_search_keywords}"
+        />
+    </label>
+</div>
+
+<div>
+    Collections:
+    {collections show='{gv_content_type_collections}'}
+    <label>
+        <input type="checkbox" name="collection[]" value="{collection_id}"{if low_search_collection ~ '/\b'.collection_id.'\b/'} checked{/if}>
+        {collection_label}
+    </label>
+    {/collections}
+</div>
+
+<div>
+    Categories:
+    {exp:channel:categories category_group="{gv_topics_category_group_id}" style="linear"}
+    <label>
+        <input type="checkbox" name="category[]" value="{category_id}"{if low_search_category ~ '/\b'.category_id.'\b/'} checked{/if}>
+        {category_name}
+    </label>
+    {/exp:channel:categories}
+<div>
+
+<button type="submit">Search</button>
+{/exp:low_search:form}

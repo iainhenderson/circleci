@@ -24,8 +24,6 @@
 
 <h1>{title}</h1>
 
-{embed="topics/-topic-types-nav" content_type="products"}
-
 {cf_page_content}
 
 {if cf_page_feature_image}
@@ -37,6 +35,13 @@
 />
 {/if}
 
-{embed='products/-entries' limit="{pr_this_index_limit}"}
+{embed='products/_form-search-advanced'
+        query='{segment_2}'
+        result_page='products'
+}
+{embed='products/-entries'
+        limit='{pr_this_index_limit}'
+        query='{segment_2}'
+}
 
 {/exp:channel:entries}

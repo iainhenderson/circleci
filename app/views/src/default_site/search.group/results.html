@@ -1,5 +1,7 @@
 {layout='site/-layout'}
 
+{preload_replace:pr_this_index_limit="10"}
+
 {exp:channel:entries
     channel="pages"
     limit="1"
@@ -26,37 +28,25 @@
 
 {if cf_page_feature_image}
 <img
-        src="{cf_page_feature_image:revved_url:feature-1x}"
-        width="{cf_page_feature_image:width:feature-1x}"
-        height="{cf_page_feature_image:height:feature-1x}"
-        srcset="{cf_page_feature_image:revved_url:feature-2x} 2x"
-        />
+    src="{cf_page_feature_image:revved_url:feature-1x}"
+    width="{cf_page_feature_image:width:feature-1x}"
+    height="{cf_page_feature_image:height:feature-1x}"
+    srcset="{cf_page_feature_image:revved_url:feature-2x} 2x"
+/>
 {/if}
 
 {/exp:channel:entries}
 
 <p><a href="{path='search/save-shortcut/{segment_3}'}">Save Search</a></p>
 
+{embed="search/_form-search-advanced"}
+
 <h2>Keywords: {exp:low_search:keywords query="{segment_3}"}</h2>
-<h2>Quick Filter:</h2>
-<ul>
-    <li><a href="{exp:low_search:url query='{segment_3}' collection=''}">All</a></li>
-    {exp:low_search:collections}
-    <li><a href="{exp:low_search:url query='{segment_3}' collection='{collection_id}'}">{collection_label}</a></li>
-    {/exp:low_search:collections}
-</ul>
 
 <h2>Results:</h2>
-{exp:low_search:results
+{embed='topics/-entries'
+    limit='{pr_this_index_limit}'
     query="{segment_3}"
-    shortcut="{segment_3}"
-    dynamic='no'
+    ad_position="6"
 }
-
-{if no_results}No search results{/if}
-
-<h3><a href="#">{title}</a></h3>
-{/exp:low_search:results}
-
-
 

@@ -1,6 +1,8 @@
 <div>
     <h3><a href="{url_title_path='products/details'}">{title}</a></h3>
-
+    {cf_product_related_brand}
+        {cf_product_related_brand:title}
+    {/cf_product_related_brand}
     {exp:store:product entry_id='{entry_id}'}
     <p>{if total_stock > 0} In Stock {if:else} Out of Stock {/if}</p>
     <p>
@@ -11,6 +13,8 @@
         {/if}
     </p>
     {/exp:store:product}
+
+
 
     {if cf_product_thumbnail_image}
     <img

@@ -81,6 +81,14 @@ if (true === isset($config)) {
 
         // Image Manipulations
         'gv_ce_img_conf:member:photo' => 'width="512" height="512" quality="85" crop="yes" save_type="jpg" filename_prefix="member_photo-" filename_suffix=".{mf_last_updated}"',
+
+        'gv_snow_category_id' => '1',
+        'gv_skate_category_id' => '2',
+        'gv_surf_category_id' => '3',
+        'gv_topics_category_group_id' => '10',
+        'gv_products_category_group_id' => '8',
+        'gv_brands_category_group_id' => '1',
+        'gv_content_type_collections' => '2|3|5|6|7|8'
     );
 
     $routes = include(__DIR__ . "/routes.php");
